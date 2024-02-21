@@ -1,5 +1,6 @@
 import {FaStar, FaStarHalfAlt, FaRegStar} from 'react-icons/fa'
 const Rating=({value,text})=>{
+
     return(<div className='rating'>
         <span>
             {
@@ -26,7 +27,7 @@ const Rating=({value,text})=>{
                 value>=5?<FaStar/>:value>=4.5?<FaStarHalfAlt/>:<FaRegStar/>
             }
         </span>
-        <span className="rating-text">{test && test}</span>
+        <span className="rating-text">{text && text}</span>
     </div>
     )
 }

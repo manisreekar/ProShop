@@ -10,13 +10,19 @@ const Product=({product})=>
             </Link>
             <Card.Body>
                 <Link to={`/product/${product._id}`}>
-                    <Card.Title as="div">
+                    <Card.Title as="div" className='product-title'>
                         <strong>{product.name}</strong>
+                        <strong>{product.numReviews} </strong>
+              
                     </Card.Title>
                 </Link>
-                <Card.text as='div'>
+           
+                
+                <Card.Text as='div'>
+            
                     <Rating value={product.rating} text={`${product.numReviews} reviews`}/>
-                </Card.text>
+                </Card.Text>
+
                 <Card.Text as="h3">
                     ${product.price}
                 </Card.Text>
