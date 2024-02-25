@@ -13,7 +13,7 @@ const ProductScreen = () => {
     // console.log(product);
     useEffect(()=>{
         const fetchProduct=async ()=>{
-            const{data}=await axios.get(`/api/product/${productId}`);
+            const{data}=await axios.get(`/api/products/${productId}`);
             console.log(data);
             setProduct(data);
         };
@@ -49,16 +49,20 @@ const ProductScreen = () => {
                 <Card>
                     <ListGroup variant="fluh">
                         <ListGroupItem>
+                            <Row>
                             <Col>Price:</Col>
                             <Col>
                             <strong>${product.price}</strong>
                             </Col>
+                            </Row>
                         </ListGroupItem>
                         <ListGroupItem>
+                            <Row>
                             <Col>Status:</Col>
                             <Col>
                             <strong>{product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}</strong>
                             </Col>
+                            </Row>
                         </ListGroupItem>
                         <ListGroupItem>
                             <Button className="btn-block" type="button" disabled={product.countInStock===0}>
